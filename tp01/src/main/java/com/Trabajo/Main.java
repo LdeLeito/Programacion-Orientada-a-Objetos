@@ -29,7 +29,7 @@ public class Main {
         principito.setRosa(FlorLiteraria);
 
         System.out.println();
-        principito.imprimirFlorPrincipito();
+        imprimirTextoLiterario(FlorLiteraria);
         // Mostrar acciones
         System.out.println(principito);
         principito.cuidar();
