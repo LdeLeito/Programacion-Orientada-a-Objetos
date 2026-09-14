@@ -1,3 +1,4 @@
 {
-    "editor.defaultFormatter": "vscjava.vscode-maven"
+    "editor.defaultFormatter": "vscjava.vscode-maven",
+    "java.configuration.updateBuildConfiguration": "interactive"
 }
