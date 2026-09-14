@@ -18,7 +18,7 @@ public class Main {
 
         // Imprimir usando la función modular dentro de Main
         System.out.println("----- Texto dinámico: flor del texto literario -----");
-        imprimirTextoLiterario(florLiteraria);
+        imprimirTextoLiterario(FlorLiteraria);
 
         System.out.println("\n----- Texto dinámico: flor hecha a medida -----");
         imprimirTextoLiterario(florPersonal);
@@ -26,7 +26,7 @@ public class Main {
     // Crear Principito con la flor1
         Principito principito = new Principito();
         principito.setNombre("Principito");
-        principito.setRosa(florLiteraria);
+        principito.setRosa(FlorLiteraria);
 
         System.out.println();
         principito.imprimirFlorPrincipito();
@@ -36,14 +36,6 @@ public class Main {
         principito.regar();
         principito.quitarOrugas();
         principito.getRosa().agradecer();
-
-        // Instancia distinta del texto
-        System.out.println("Flor valores distintos del texto literario: " + Flor3);
-
-        // Mostrar otra instancia
-        Principito p2 = new Principito("Explorador", Flor2);
-        System.out.println(p2);
-        p2.getRosa().agradecer();
     }
 
     // Función que genera el texto literario como String a partir de una Flor

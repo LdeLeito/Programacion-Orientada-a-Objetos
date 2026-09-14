@@ -67,4 +67,10 @@ public class Principito {
         System.out.println("Estado: " + (rosa.getEstado().isEmpty() ? "desconocido" : rosa.getEstado()));
         System.out.println("--------------------------------");
     }
+
+    // indica que el método siguiente (en este caso toString()) sobrescribe un método de la superclase (Object.toString()).
+    @Override
+    public String toString() {
+        return "Principito{nombre='" + nombre + "', rosa=" + (rosa == null ? "null" : rosa.toString()) + "}";
+    }
 }
