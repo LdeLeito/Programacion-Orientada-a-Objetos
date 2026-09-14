@@ -3,33 +3,55 @@ package trabajo;
 import java.util.List;
 
 public abstract class Pieza {
-    private String tipodePieza;
-    private String Color;
-    private int valor;
-    private int posicionx;
-    private int posiciony;
-    private boolean esCapturado;
-    private List movimientos;
 
+    private final String tipo;
+    private final Color color;
+    private int x;
+    private int y;
+    private boolean capturada;
 
     // Constructor vacio
-    public Pieza() {
-        this.Color = "";
-        this.esCapturado = false;
-        this.valor = 0;
-        this.posicionx = 0;
-        this.posiciony = 0;
-        this.movimientos = null;
+    protected Pieza(String tipo, Color color, int x, int y) {
+        this.tipo = tipo;
+        this.color = color;
+        this.x = x;
+        this.y = y;
+        this.capturada = false;
     }
 
+    // getters
 
-    // metodos 
-    public String obtenerMovimientosLegales() {
-        return "";
+    public String getTipo() {
+        return tipo;
     }
 
-    public void mover(int x, int y) {
-        this.posicionx = x;
-        this.posiciony = y;
+    public Color getColor() {
+        return color;
+    }
+
+    public int getX() {
+        return x;
+    }
+
+    public int getY() {
+        return y;
+    }
+
+    public boolean esCapturada() {
+        return capturada;
+    }
+
+    protected void aplicarCaptura(boolean capturado) {
+        this.capturada = capturado;
+    }
+
+    // Genera movimientos candidatos sin validar jaque; Tablero hará la validación
+    // final
+    public abstract List<Movimiento> generarMovimientos(Tablero tablero);
+
+    // Método auxiliar interno para actualizar posición (package/protected)
+    protected void actualizarPosicion(int x, int y) {
+        this.x = x;
+        this.y = y;
     }
 }

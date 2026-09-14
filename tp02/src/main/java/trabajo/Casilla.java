@@ -8,6 +8,7 @@ public class Casilla {
     private final int y;
     private Pieza piezaOcupante;
 
+    // Constructor completo
     public Casilla(int x, int y) {
         this.x = x;
         this.y = y;
