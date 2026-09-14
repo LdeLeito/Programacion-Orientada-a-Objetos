@@ -53,4 +53,18 @@ public class Principito {
     public void quitarOrugas() {
         System.out.println("El Principito quita las orugas de su rosa.");
     }
+
+    // Metodo que imprime los atributos de la flor que pertenece al Principito, con manejo de valores nulos o vacíos
+    public void imprimirFlorPrincipito() {
+        if (rosa == null) {
+            System.out.println("El Principito no tiene una flor asignada.");
+            return;
+        }
+        System.out.println("----- Flor del Principito -----");
+        System.out.println("Nombre: " + (rosa.getNombre().isEmpty() ? "sin nombre" : rosa.getNombre()));
+        System.out.println("Sentimiento: " + (rosa.getSentimiento().isEmpty() ? "desconocido" : rosa.getSentimiento()));
+        System.out.println("Cualidad: " + (rosa.getCualidad().isEmpty() ? "desconocida" : rosa.getCualidad()));
+        System.out.println("Estado: " + (rosa.getEstado().isEmpty() ? "desconocido" : rosa.getEstado()));
+        System.out.println("--------------------------------");
+    }
 }

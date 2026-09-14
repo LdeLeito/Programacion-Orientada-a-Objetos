@@ -58,7 +58,7 @@ public class Flor {
 
     // Método público para mostrar el estado de la flor
     public void agradecer() {
-        System.out.println(
-                "La flor " + (nombre.isEmpty() ? "sin nombre" : nombre) + " agradece al Principito por su dedicación.");
+        String n = (nombre == null || nombre.isEmpty()) ? "una flor" : nombre;
+        System.out.println("La flor " + n + " agradece al Principito por su dedicación.");
     }
 }
