@@ -7,10 +7,13 @@ package trabajo;
 
 public interface Movimiento {
     Casilla getOrigen();
+
     Casilla getDestino();
 
     void aplicar(Tablero tablero);
+
     void deshacer(Tablero tablero);
-    boolean eslegal (Tablero tablero);
-    
+
+    boolean eslegal(Tablero tablero);
+
 }

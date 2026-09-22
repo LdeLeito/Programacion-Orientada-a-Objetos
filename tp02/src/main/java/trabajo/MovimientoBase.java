@@ -1,7 +1,7 @@
 package trabajo;
 
 public abstract class MovimientoBase implements Movimiento {
-    
+
     protected final Casilla origen;
     protected final Casilla destino;
     protected final Pieza piezaMovida;

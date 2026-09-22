@@ -11,6 +11,15 @@ public abstract class Pieza {
     private boolean capturada;
 
     // Constructor vacio
+    protected Pieza() {
+        this.tipo = null;
+        this.color = null;
+        this.x = 0;
+        this.y = 0;
+        this.capturada = false;
+    }
+
+    // Constructor completo
     protected Pieza(String tipo, Color color, int x, int y) {
         this.tipo = tipo;
         this.color = color;

@@ -40,13 +40,14 @@ public class Casilla {
         this.piezaOcupante = pieza;
     }
 
-    public void setX (int x) {
+    public void setX(int x) {
         this.x = x;
     }
 
-    public void setY (int y) {
+    public void setY(int y) {
         this.y = y;
     }
+
     // Metodo para saber si la casilla esta vacia o no
     public boolean estaVacia() {
         return piezaOcupante == null;
