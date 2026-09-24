@@ -28,12 +28,12 @@ public class Casilla {
         return y;
     }
 
-    public Pieza getPieza() {
+    public Pieza getPiezaOcupante() {
         return piezaOcupante;
     }
 
     // setters
-    public void setPieza(Pieza pieza) {
+    public void setPiezaOcupante(Pieza pieza) {
         this.piezaOcupante = pieza;
     }
 

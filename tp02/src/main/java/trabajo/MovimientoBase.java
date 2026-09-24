@@ -36,7 +36,7 @@ public abstract class MovimientoBase implements Movimiento {
     }
 
     public boolean esCaptura() {
-        return destino.getPieza() != null && !destino.estaVacia();
+        return destino.getPiezaOcupante() != null && !destino.estaVacia();
     }
 
     // setters
@@ -47,7 +47,5 @@ public abstract class MovimientoBase implements Movimiento {
     public void setDestino(Casilla destino) {
         this.destino = destino;
     }
-
-    // Metodos de la interfaz
 
 }

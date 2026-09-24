@@ -14,6 +14,6 @@ public interface Movimiento {
 
     void deshacer(Tablero tablero);
 
-    boolean eslegal(Tablero tablero);
+    boolean esLegal(Tablero tablero);
 
 }
