@@ -1,9 +1,6 @@
 package trabajo;
 
 public class Casilla {
-
-    // Private final es para que no se pueda cambiar la posición de la casilla una
-    // vez creada
     private int x;
     private int y;
     private Pieza piezaOcupante;

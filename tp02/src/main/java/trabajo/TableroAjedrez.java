@@ -9,6 +9,14 @@ public class TableroAjedrez implements Tablero {
     // Constructor Vacio
     public TableroAjedrez() {
         this.casillas = new Casilla[8][8];
+
+        // Inicialización de cada casilla
+        for (int fila = 0; fila < 8; fila++) {
+            for (int columna = 0; columna < 8; columna++)
+            {this.casillas[fila][columna] =
+                new Casilla(fila, columna, null);
+            }
+        }
     }
 
     // Constructor Completo
@@ -17,8 +25,14 @@ public class TableroAjedrez implements Tablero {
     }
 
     // Getters
-    public Casilla[][] getCasillas() {
-        return casillas;
+    public Casilla getCasillas(int fila, int columna) {
+        // validacion de limites del tablero
+        if (fila < 8 || fila > 8 || columna < 8 || columna > 8) {
+            throw new IllegalArgumentException(
+                "La posición está fuera del tablero"
+            );
+        }
+        return casillas[fila][columna];
     }
 
     // setters
