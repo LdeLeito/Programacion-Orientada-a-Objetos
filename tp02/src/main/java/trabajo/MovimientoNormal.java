@@ -16,7 +16,7 @@ public class MovimientoNormal extends MovimientoBase {
     @Override
     public void aplicar(Tablero tablero) {
         destino.setPiezaOcupante(piezaMovida);
-        origen.setPiezaOcupante(piezaMovida);
+        origen.setPiezaOcupante(null);
 
         piezaMovida.setX(destino.getX());
         piezaMovida.setY(destino.getY());
@@ -25,7 +25,7 @@ public class MovimientoNormal extends MovimientoBase {
     @Override
     public void deshacer(Tablero tablero) {
         origen.setPiezaOcupante(piezaMovida);
-        destino.setPiezaOcupante(piezaMovida);
+        destino.setPiezaOcupante(null);
 
         piezaMovida.setX(origen.getX());
         piezaMovida.setY(origen.getY());

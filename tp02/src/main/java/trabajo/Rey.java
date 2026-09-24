@@ -3,16 +3,16 @@ package trabajo;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Peon extends Pieza {
+public class Rey extends Pieza {
 
     // Constructor Vacio
-    public Peon() {
+    public Rey() {
         super();
     }
 
     // Constructor Completo
-    public Peon(Color color, int x, int y, boolean capturada) {
-        super("Peón", color, x, y, capturada);
+    public Rey(Color color, int x, int y, boolean capturada) {
+        super("Rey", color, x, y, capturada);
     }
 
     @Override

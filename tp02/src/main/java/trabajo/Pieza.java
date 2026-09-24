@@ -25,7 +25,7 @@ public abstract class Pieza {
         this.color = color;
         this.x = x;
         this.y = y;
-        this.capturada = false;
+        this.capturada = capturada;
     }
 
     // getters
@@ -68,11 +68,7 @@ public abstract class Pieza {
         this.y = y;
     }
 
-    public boolean setCapturada() {
-        return capturada;
-    }
-
-    protected void aplicarCaptura(boolean capturada) {
+    public void setCapturada(boolean capturada) {
         this.capturada = capturada;
     }
 
