@@ -1,18 +1,22 @@
 package trabajo;
 
 public class Casilla {
-
-    // Private final es para que no se pueda cambiar la posición de la casilla una
-    // vez creada
-    private final int x;
-    private final int y;
+    private int x;
+    private int y;
     private Pieza piezaOcupante;
 
+    // Constructor vacio
+    public Casilla() {
+        this.x = 0;
+        this.y = 0;
+        this.piezaOcupante = null;
+    }
+
     // Constructor completo
-    public Casilla(int x, int y) {
+    public Casilla(int x, int y, Pieza piezaOcupante) {
         this.x = x;
         this.y = y;
-        this.piezaOcupante = null;
+        this.piezaOcupante = piezaOcupante;
     }
 
     // getters
@@ -24,13 +28,21 @@ public class Casilla {
         return y;
     }
 
-    public Pieza getPieza() {
+    public Pieza getPiezaOcupante() {
         return piezaOcupante;
     }
 
     // setters
-    public void setPieza(Pieza pieza) {
+    public void setPiezaOcupante(Pieza pieza) {
         this.piezaOcupante = pieza;
+    }
+
+    public void setX(int x) {
+        this.x = x;
+    }
+
+    public void setY(int y) {
+        this.y = y;
     }
 
     // Metodo para saber si la casilla esta vacia o no
