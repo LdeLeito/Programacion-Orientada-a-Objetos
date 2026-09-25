@@ -17,6 +17,15 @@ public class Torre extends Pieza {
 
     @Override
     public List<Movimiento> generarMovimientos(Tablero tablero) {
-        return new ArrayList<>();
+        List<Movimiento> movimientos = new ArrayList<>();
+
+        if (getCapturada()) {
+            return movimientos;
+        }
+
+        Casilla origen = tablero.getCasilla(getX(), getY());
+        
+
+        }
     }
 }
