@@ -17,4 +17,6 @@ public interface Tablero {
     void deshacerMovimiento(Movimiento movimiento);
 
     List<Movimiento> obtenerMovimientosLegales(Pieza pieza);
+    
+    public void colocarPieza(Pieza pieza);
 }

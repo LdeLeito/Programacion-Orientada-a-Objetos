@@ -40,10 +40,11 @@ public class TableroAjedrez implements Tablero {
 
     // Metodos
 
-    @Override 
+    @Override
     public boolean estaDentroDelTablero(int x, int y) {
         return x >= 0 && x < 8 && y >= 0 && y < 8;
     }
+
     @Override
     public void aplicarMovimiento(Movimiento movimiento) {
 
@@ -57,6 +58,15 @@ public class TableroAjedrez implements Tablero {
     @Override
     public List<Movimiento> obtenerMovimientosLegales(Pieza pieza) {
         return new ArrayList<>();
+    }
+
+    @Override 
+    public void colocarPieza(Pieza pieza) {
+        Casilla casilla = getCasilla(pieza.getX(), pieza.getY());
+        if (!casilla.estaVacia()) {
+            throw new IllegalStateException("La casilla está ocupada");
+        }
+        casilla.setPiezaOcupante(pieza);
     }
 
 }
