@@ -39,6 +39,11 @@ public class TableroAjedrez implements Tablero {
     }
 
     // Metodos
+
+    @Override 
+    public boolean estaDentroDelTablero(int x, int y) {
+        return x >= 0 && x < 8 && y >= 0 && y < 8;
+    }
     @Override
     public void aplicarMovimiento(Movimiento movimiento) {
 

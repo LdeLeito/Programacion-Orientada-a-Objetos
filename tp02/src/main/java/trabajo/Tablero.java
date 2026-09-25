@@ -10,6 +10,8 @@ import java.util.List;
 public interface Tablero {
     Casilla getCasilla(int x, int y);
 
+    boolean estaDentroDelTablero(int x, int y);
+
     void aplicarMovimiento(Movimiento movimiento);
 
     void deshacerMovimiento(Movimiento movimiento);

@@ -76,9 +76,20 @@ public abstract class Pieza {
     // final
     public abstract List<Movimiento> generarMovimientos(Tablero tablero);
 
-    // Método auxiliar interno para actualizar posición (package/protected)
+    // Método auxiliar interno para actualizar posición
     protected void actualizarPosicion(int x, int y) {
         this.x = x;
         this.y = y;
+    }
+
+    protected boolean puedeOcupar(Casilla destino) {
+        return destino.estaVacia()
+                || destino.getPiezaOcupante().getColor() != getColor();
+    }
+
+    protected Movimiento crearMovimiento(
+            Casilla origen,
+            Casilla destino) {
+        return new MovimientoNormal(origen, destino, this);
     }
 }

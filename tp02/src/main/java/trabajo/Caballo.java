@@ -38,16 +38,12 @@ public class Caballo extends Pieza {
             int nuevoY = getY() + desplazamiento[1];
 
             // Verificación de la posición este dentro del tablero
-            if (nuevoX >= 0 && nuevoX < 8 && nuevoY >= 0 && nuevoY < 8) {
+            if (tablero.estaDentroDelTablero(nuevoX, nuevoY)) {
                 Casilla destino = tablero.getCasilla(nuevoX, nuevoY);
 
                 // Si puede moverse a una casilla vacía
-                if (destino.estaVacia()) {
-                    movimientos.add(new MovimientoNormal(origen, destino, this));
-                }
-                // Verificacion de si puede capturar una pieza del contrario
-                else if (destino.getPiezaOcupante().getColor() != getColor()) {
-                    movimientos.add(new MovimientoNormal(origen, destino, this));
+                if (puedeOcupar(destino)) {
+                    movimientos.add(crearMovimiento(origen, destino));
                 }
             }
         }
