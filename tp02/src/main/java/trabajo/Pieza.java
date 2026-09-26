@@ -92,4 +92,16 @@ public abstract class Pieza {
             Casilla destino) {
         return new MovimientoNormal(origen, destino, this);
     }
+
+    // Metodo para poder imprimir bien las cosas
+    @Override
+    public String toString() {
+        return "Pieza{" +
+                "tipo='" + tipo + '\'' +
+                ", color=" + color +
+                ", fila=" + x +
+                ", columna=" + y +
+                ", capturada=" + capturada +
+                '}';
+    }
 }
