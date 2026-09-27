@@ -12,7 +12,7 @@ public class Peon extends Pieza {
 
     // Constructor Completo
     public Peon(Color color, int x, int y, boolean capturada) {
-        super("Peón", color, x, y, capturada);
+        super("Peón", "Agresor", color, x, y, capturada);
     }
 
     @Override

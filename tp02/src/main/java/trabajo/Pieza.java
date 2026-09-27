@@ -5,6 +5,7 @@ import java.util.List;
 public abstract class Pieza {
 
     private String tipo;
+    private String Caracteristica;
     private Color color;
     private int x;
     private int y;
@@ -34,6 +35,10 @@ public abstract class Pieza {
         return tipo;
     }
 
+    public String getCaracteristica() {
+        return Caracteristica;
+    }
+
     public Color getColor() {
         return color;
     }
@@ -54,6 +59,10 @@ public abstract class Pieza {
 
     public void setTipo(String tipo) {
         this.tipo = tipo;
+    }
+
+    public void setCaracteristica(String Caracteristica) {
+        this.Caracteristica = Caracteristica;
     }
 
     public void setColor(Color color) {

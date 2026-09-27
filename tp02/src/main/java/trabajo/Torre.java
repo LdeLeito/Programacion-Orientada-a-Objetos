@@ -12,7 +12,7 @@ public class Torre extends Pieza {
 
     // Constructor Completo
     public Torre(Color color, int x, int y, boolean capturada) {
-        super("Torre", color, x, y, capturada);
+        super("Torre", "Homerica", color, x, y, capturada);
     }
 
     @Override
