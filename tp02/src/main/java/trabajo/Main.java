@@ -4,16 +4,20 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-     
         TableroAjedrez tablero = new TableroAjedrez();
 
-        Torre Torre = new Torre(Color.BLANCO,4,4,false);
-            tablero.colocarPieza(Torre);
-            List<Movimiento> movimientos =
-            Torre.generarMovimientos(tablero);
-            System.out.println("La pieza en el tablero es: "+ Torre);
+        // Prueba de movimientos bloqueado por Torre enemiga
+        Reina reina = new Reina( Color.BLANCO, 4, 4, false);
+        Torre rival = new Torre(Color.NEGRO, 4, 6, false);
+        tablero.colocarPieza(reina);
+        tablero.colocarPieza(rival);
+        List<Movimiento> movimientos = reina.generarMovimientos(tablero);
+        System.out.println("Movimientos: " + movimientos.size());
+        for (Movimiento movimiento : movimientos) {
             System.out.println(
-            "Movimientos disponibles: " + movimientos.size()
-            );
-            }
+                    movimiento.getDestino().getX()
+                            + ", "
+                            + movimiento.getDestino().getY());
+        }
+    }
 }
