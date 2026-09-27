@@ -69,4 +69,46 @@ public class TableroAjedrez implements Tablero {
         casilla.setPiezaOcupante(pieza);
     }
 
+    // Metodo de impresion del tablero representando con letras
+
+    public void imprimirTablero() {
+    System.out.println("\nTablero:");
+
+    for (int fila = 7; fila >= 0; fila--) {
+        System.out.print(fila + " | ");
+
+        for (int columna = 0; columna < 8; columna++) {
+            Pieza pieza =
+                    casillas[fila][columna].getPiezaOcupante();
+
+            System.out.print(obtenerSimbolo(pieza) + " ");
+        }
+
+        System.out.println();
+    }
+
+    System.out.println("  +-----------------");
+    System.out.println("    0 1 2 3 4 5 6 7");
+}
+
+private String obtenerSimbolo(Pieza pieza) {
+    if (pieza == null) {
+        return ".";
+    }
+
+    String simbolo = switch (pieza.getTipo()) {
+        case "Rey" -> "R";
+        case "Reina" -> "D";
+        case "Torre" -> "T";
+        case "Alfil" -> "A";
+        case "Caballo" -> "C";
+        case "Peón" -> "P";
+        default -> "?";
+    };
+
+    return pieza.getColor() == Color.BLANCO
+            ? simbolo
+            : simbolo.toLowerCase();
+}
+
 }

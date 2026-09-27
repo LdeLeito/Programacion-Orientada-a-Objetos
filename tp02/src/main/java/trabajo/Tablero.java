@@ -19,4 +19,6 @@ public interface Tablero {
     List<Movimiento> obtenerMovimientosLegales(Pieza pieza);
     
     public void colocarPieza(Pieza pieza);
+
+    public void imprimirTablero();
 }
