@@ -109,6 +109,7 @@ public abstract class Pieza {
     public String toString() {
         return "Pieza{" +
                 "tipo='" + tipo + '\'' +
+                ", Caracteristica=" + Caracteristica +
                 ", color=" + color +
                 ", fila=" + x +
                 ", columna=" + y +
