@@ -70,7 +70,8 @@ public class TableroAjedrez implements Tablero {
     }
 
     // Metodo de impresion del tablero representando con letras
-
+    
+    @Override 
     public void imprimirTablero() {
     System.out.println("\nTablero:");
 
