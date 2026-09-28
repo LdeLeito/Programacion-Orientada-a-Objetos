@@ -12,7 +12,7 @@ public class Alfil extends Pieza {
 
     // Constructor Completo
     public Alfil(Color color, int x, int y, boolean capturada) {
-        super("Alfil", color, x, y, capturada);
+        super("Alfil", "Oblicuo", color, x, y, capturada);
     }
 
     @Override

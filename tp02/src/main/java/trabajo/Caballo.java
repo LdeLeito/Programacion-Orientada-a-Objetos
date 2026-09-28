@@ -12,7 +12,7 @@ public class Caballo extends Pieza {
 
     // Constructor Completo
     public Caballo(Color color, int x, int y, boolean capturada) {
-        super("Caballo", color, x, y, capturada);
+        super("Caballo", "ligero", color, x, y, capturada);
     }
 
     @Override

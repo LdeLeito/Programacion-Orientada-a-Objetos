@@ -5,6 +5,7 @@ import java.util.List;
 public abstract class Pieza {
 
     private String tipo;
+    private String Caracteristica;
     private Color color;
     private int x;
     private int y;
@@ -13,6 +14,7 @@ public abstract class Pieza {
     // Constructor vacio
     protected Pieza() {
         this.tipo = null;
+        this.Caracteristica = null;
         this.color = null;
         this.x = 0;
         this.y = 0;
@@ -20,8 +22,9 @@ public abstract class Pieza {
     }
 
     // Constructor completo
-    protected Pieza(String tipo, Color color, int x, int y, boolean capturada) {
+    protected Pieza(String tipo, String Caracteristica, Color color, int x, int y, boolean capturada) {
         this.tipo = tipo;
+        this.Caracteristica = Caracteristica;
         this.color = color;
         this.x = x;
         this.y = y;
@@ -32,6 +35,10 @@ public abstract class Pieza {
 
     public String getTipo() {
         return tipo;
+    }
+
+    public String getCaracteristica() {
+        return Caracteristica;
     }
 
     public Color getColor() {
@@ -54,6 +61,10 @@ public abstract class Pieza {
 
     public void setTipo(String tipo) {
         this.tipo = tipo;
+    }
+
+    public void setCaracteristica(String Caracteristica) {
+        this.Caracteristica = Caracteristica;
     }
 
     public void setColor(Color color) {
@@ -91,5 +102,18 @@ public abstract class Pieza {
             Casilla origen,
             Casilla destino) {
         return new MovimientoNormal(origen, destino, this);
+    }
+
+    // Metodo para poder imprimir bien las cosas
+    @Override
+    public String toString() {
+        return "Pieza{" +
+                "tipo='" + tipo + '\'' +
+                ", Caracteristica=" + Caracteristica +
+                ", color=" + color +
+                ", fila=" + x +
+                ", columna=" + y +
+                ", capturada=" + capturada +
+                '}';
     }
 }
