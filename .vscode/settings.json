@@ -1,4 +1,7 @@
 {
     "editor.defaultFormatter": "vscjava.vscode-maven",
-    "java.configuration.updateBuildConfiguration": "interactive"
+    "java.configuration.updateBuildConfiguration": "interactive",
+    "[xml]": {
+        "editor.defaultFormatter": "Oracle.oracle-java"
+    }
 }
