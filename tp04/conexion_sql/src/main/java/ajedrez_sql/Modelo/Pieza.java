@@ -1,0 +1,119 @@
+package ajedrez_sql.Modelo;
+
+import java.util.List;
+
+public abstract class Pieza {
+
+    private String tipo;
+    private String Caracteristica;
+    private Color color;
+    private int x;
+    private int y;
+    private boolean capturada;
+
+    // Constructor vacio
+    protected Pieza() {
+        this.tipo = null;
+        this.Caracteristica = null;
+        this.color = null;
+        this.x = 0;
+        this.y = 0;
+        this.capturada = false;
+    }
+
+    // Constructor completo
+    protected Pieza(String tipo, String Caracteristica, Color color, int x, int y, boolean capturada) {
+        this.tipo = tipo;
+        this.Caracteristica = Caracteristica;
+        this.color = color;
+        this.x = x;
+        this.y = y;
+        this.capturada = capturada;
+    }
+
+    // getters
+
+    public String getTipo() {
+        return tipo;
+    }
+
+    public String getCaracteristica() {
+        return Caracteristica;
+    }
+
+    public Color getColor() {
+        return color;
+    }
+
+    public int getX() {
+        return x;
+    }
+
+    public int getY() {
+        return y;
+    }
+
+    public boolean getCapturada() {
+        return capturada;
+    }
+
+    // setters
+
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
+    }
+
+    public void setCaracteristica(String Caracteristica) {
+        this.Caracteristica = Caracteristica;
+    }
+
+    public void setColor(Color color) {
+        this.color = color;
+    }
+
+    public void setX(int x) {
+        this.x = x;
+    }
+
+    public void setY(int y) {
+        this.y = y;
+    }
+
+    public void setCapturada(boolean capturada) {
+        this.capturada = capturada;
+    }
+
+    // Genera movimientos candidatos sin validar jaque; Tablero hará la validación
+    // final
+    public abstract List<Movimiento> generarMovimientos(Tablero tablero);
+
+    // Método auxiliar interno para actualizar posición
+    protected void actualizarPosicion(int x, int y) {
+        this.x = x;
+        this.y = y;
+    }
+
+    protected boolean puedeOcupar(Casilla destino) {
+        return destino.estaVacia()
+                || destino.getPiezaOcupante().getColor() != getColor();
+    }
+
+    protected Movimiento crearMovimiento(
+            Casilla origen,
+            Casilla destino) {
+        return new MovimientoNormal(origen, destino, this);
+    }
+
+    // Metodo para poder imprimir bien las cosas
+    @Override
+    public String toString() {
+        return "Pieza{" +
+                "tipo='" + tipo + '\'' +
+                ", Caracteristica=" + Caracteristica +
+                ", color=" + color +
+                ", fila=" + x +
+                ", columna=" + y +
+                ", capturada=" + capturada +
+                '}';
+    }
+}
