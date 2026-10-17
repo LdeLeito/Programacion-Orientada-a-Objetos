@@ -1,4 +1,5 @@
 package ajedrez_sql.Modelo;
+import ajedrez_sql.Logica.*;
 
 import java.util.List;
 

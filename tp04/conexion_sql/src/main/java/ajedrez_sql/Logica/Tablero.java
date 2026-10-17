@@ -1,6 +1,9 @@
 package ajedrez_sql.logica;
-
 import java.util.List;
+
+import ajedrez_sql.Modelo.Casilla;
+import ajedrez_sql.Modelo.Movimiento;
+import ajedrez_sql.Modelo.Pieza;
 
 // permite enunciar un conjunto de constantes y de cabeceras de métodos abstractos; éstos 
 // deben implementarse en las clases y constituyen la interfaz de la clase.
