@@ -3,6 +3,7 @@ package ajedrez_sql.Modelo;
 import java.util.ArrayList;
 import java.util.List;
 
+import ajedrez_sql.logica.Tablero;
 public class Peon extends Pieza {
 
     // Constructor Vacio

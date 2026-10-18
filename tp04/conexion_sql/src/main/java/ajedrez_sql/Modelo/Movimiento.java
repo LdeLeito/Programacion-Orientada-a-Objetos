@@ -1,5 +1,7 @@
 package ajedrez_sql.Modelo;
 
+import ajedrez_sql.logica.Tablero;
+
 // permite enunciar un conjunto de constantes y de cabeceras de métodos abstractos; éstos 
 // deben implementarse en las clases y constituyen la interfaz de la clase.
 // con ello se especifica el comportamiento común de todas las clases que implementen la 

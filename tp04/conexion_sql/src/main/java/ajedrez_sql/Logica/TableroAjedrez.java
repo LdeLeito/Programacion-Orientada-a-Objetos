@@ -3,6 +3,11 @@ package ajedrez_sql.logica;
 import java.util.ArrayList;
 import java.util.List;
 
+import ajedrez_sql.Modelo.Casilla;
+import ajedrez_sql.Modelo.Color;
+import ajedrez_sql.Modelo.Movimiento;
+import ajedrez_sql.Modelo.Pieza;
+
 public class TableroAjedrez implements Tablero {
     private Casilla[][] casillas;
 
@@ -97,15 +102,29 @@ private String obtenerSimbolo(Pieza pieza) {
         return ".";
     }
 
-    String simbolo = switch (pieza.getTipo()) {
-        case "Rey" -> "R";
-        case "Reina" -> "D";
-        case "Torre" -> "T";
-        case "Alfil" -> "A";
-        case "Caballo" -> "C";
-        case "Peón" -> "P";
-        default -> "?";
-    };
+    String simbolo;
+    switch (pieza.getTipo()) {
+        case "Rey":
+            simbolo = "R";
+            break;
+        case "Reina":
+            simbolo = "D";
+            break;
+        case "Torre":
+            simbolo = "T";
+            break;
+        case "Alfil":
+            simbolo = "A";
+            break;
+        case "Caballo":
+            simbolo = "C";
+            break;
+        case "Peón":
+            simbolo = "P";
+            break;
+        default:
+            simbolo = "?";
+    }
 
     return pieza.getColor() == Color.BLANCO
             ? simbolo
