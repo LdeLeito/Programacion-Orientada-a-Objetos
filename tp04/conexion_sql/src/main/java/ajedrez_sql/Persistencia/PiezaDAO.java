@@ -3,11 +3,10 @@ package ajedrez_sql.Persistencia;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
-
 import ajedrez_sql.Modelo.*;
 
 public class PiezaDAO {
-    private AccesoDB db;
+    private final AccesoDB db;
 
     public PiezaDAO() {
         db = new AccesoDB();
@@ -21,7 +20,7 @@ public class PiezaDAO {
             ps.setInt(2, obteneridColor(pieza));
             ps.setInt(3, pieza.getX());
             ps.setInt(4, pieza.getY());
-            ps.setBoolean(5, pieza.esCaptura(pieza));
+            ps.setBoolean(5, pieza.getCapturada());
             ps.executeUpdate();
         } catch (SQLException e) {
             throw new RuntimeException("No se pudo insertar la pieza", e);
