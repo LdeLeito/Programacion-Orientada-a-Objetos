@@ -2,6 +2,7 @@ package ajedrez_sql;
 
 import java.util.List;
 
+import ajedrez_sql.Logica.TableroAjedrez;
 import ajedrez_sql.Modelo.Alfil;
 import ajedrez_sql.Modelo.Caballo;
 import ajedrez_sql.Modelo.Color;
@@ -11,11 +12,9 @@ import ajedrez_sql.Modelo.Pieza;
 import ajedrez_sql.Modelo.Reina;
 import ajedrez_sql.Modelo.Rey;
 import ajedrez_sql.Modelo.Torre;
-import ajedrez_sql.logica.TableroAjedrez;
 
 public class Main {
-
-    public static void main(String[] args) {
+        public static void main(String[] args) {
 
         TableroAjedrez tablero = new TableroAjedrez();
         
@@ -24,13 +23,13 @@ public class Main {
         imprimirPiezas(tablero, Color.BLANCO);
         imprimirPiezas(tablero, Color.NEGRO);
         tablero.imprimirTablero();
-        // Prueba del caballo blanco izquierdo.
-        Pieza caballo = tablero
+        // Prueba del peon blanco.
+        Pieza peon = tablero
                 .getCasilla(0, 1)
                 .getPiezaOcupante();
-        List<Movimiento> movimientos = caballo.generarMovimientos(tablero);
+        List<Movimiento> movimientos = peon.generarMovimientos(tablero);
         System.out.println(
-                "\nMovimientos disponibles del caballo: "
+                "\nMovimientos disponibles del peon: "
                         + movimientos.size());
     }
 

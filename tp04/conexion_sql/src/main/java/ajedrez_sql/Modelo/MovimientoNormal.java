@@ -1,5 +1,5 @@
 package ajedrez_sql.Modelo;
-import ajedrez_sql.logica.Tablero;
+import ajedrez_sql.Logica.Tablero;
 public class MovimientoNormal extends MovimientoBase {
 
     private Pieza piezaCapturada;

@@ -1,4 +1,4 @@
-package ajedrez_sql.logica;
+package ajedrez_sql.Logica;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -102,29 +102,15 @@ private String obtenerSimbolo(Pieza pieza) {
         return ".";
     }
 
-    String simbolo;
-    switch (pieza.getTipo()) {
-        case "Rey":
-            simbolo = "R";
-            break;
-        case "Reina":
-            simbolo = "D";
-            break;
-        case "Torre":
-            simbolo = "T";
-            break;
-        case "Alfil":
-            simbolo = "A";
-            break;
-        case "Caballo":
-            simbolo = "C";
-            break;
-        case "Peón":
-            simbolo = "P";
-            break;
-        default:
-            simbolo = "?";
-    }
+    String simbolo = switch (pieza.getTipo()) {
+        case "Rey" -> "R";
+        case "Reina" -> "D";
+        case "Torre" -> "T";
+        case "Alfil" -> "A";
+        case "Caballo" -> "C";
+        case "Peón" -> "P";
+        default -> "?";
+    };
 
     return pieza.getColor() == Color.BLANCO
             ? simbolo

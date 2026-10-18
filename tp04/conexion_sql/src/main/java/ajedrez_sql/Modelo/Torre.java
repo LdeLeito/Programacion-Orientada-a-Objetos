@@ -3,7 +3,7 @@ package ajedrez_sql.Modelo;
 import java.util.ArrayList;
 import java.util.List;
 
-import ajedrez_sql.logica.Tablero;
+import ajedrez_sql.Logica.Tablero;
 public class Torre extends Pieza {
 
     // Constructor Vacio

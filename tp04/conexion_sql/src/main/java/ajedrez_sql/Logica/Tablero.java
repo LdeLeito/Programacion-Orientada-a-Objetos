@@ -1,4 +1,4 @@
-package ajedrez_sql.logica;
+package ajedrez_sql.Logica;
 import java.util.List;
 
 import ajedrez_sql.Modelo.Casilla;
