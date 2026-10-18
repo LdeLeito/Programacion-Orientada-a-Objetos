@@ -3,7 +3,9 @@ package ajedrez_sql.Persistencia;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
-import ajedrez_sql.Modelo.*;
+
+import ajedrez_sql.Modelo.Color;
+import ajedrez_sql.Modelo.Pieza;
 
 public class PiezaDAO {
     private final AccesoDB db;
@@ -28,22 +30,15 @@ public class PiezaDAO {
     }
 
     private int obtenerIdTipo(Pieza pieza) {
-        switch (pieza.getTipo()) {
-            case "Rey":
-                return 1;
-            case "Reina":
-                return 2;
-            case "Torre":
-                return 3;
-            case "Alfil":
-                return 4;
-            case "Caballo":
-                return 5;
-            case "Peon":
-                return 6;
-            default:
-                throw new IllegalArgumentException("Tipo desconocido: " + pieza.getTipo());
-        }
+        return switch (pieza.getTipo()) {
+            case "Rey" -> 1;
+            case "Reina" -> 2;
+            case "Torre" -> 3;
+            case "Alfil" -> 4;
+            case "Caballo" -> 5;
+            case "Peon" -> 6;
+            default -> throw new IllegalArgumentException("Tipo desconocido: " + pieza.getTipo());
+        };
     }
 
     private int obteneridColor(Pieza pieza) {
