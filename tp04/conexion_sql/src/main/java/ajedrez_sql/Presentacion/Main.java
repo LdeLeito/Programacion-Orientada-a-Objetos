@@ -1,4 +1,4 @@
-package ajedrez_sql;
+package ajedrez_sql.Presentacion;
 
 import ajedrez_sql.Logica.TableroAjedrez;
 import ajedrez_sql.Modelo.Alfil;
@@ -26,27 +26,10 @@ public class Main {
 
                 // Imprimir el tablero
                 tablero.imprimirTablero();
-
-                // Guardar las piezas en la base de datos
-
-                try {
-                        PiezaDAO DAO = new PiezaDAO();
-                        for (int fila = 0; fila < 8; fila++) {
-                                for (int columna = 0; columna < 8; columna++) {
-
-                                        Pieza pieza = tablero
-                                                        .getCasilla(fila, columna)
-                                                        .getPiezaOcupante();
-
-                                        if (pieza != null) {
-                                                DAO.insertarPieza(pieza);
-                                                System.out.println("Insertando: " + pieza.getTipo() + " de color " + pieza.getColor());
-                                        }
-                                }
-                        }
-                } catch (Exception e) {
-                        e.printStackTrace();
-                }
+                // guardar las piezas del tablero en la base de datos
+                guardarPiezasBD(tablero);
+                // listar las piezas de la base de datos
+                listarPiezasBD();
         }
 
         private static void colocarPiezasBlancas(
@@ -120,6 +103,36 @@ public class Main {
                                         System.out.println(pieza);
                                 }
                         }
+                }
+        }
+
+        private static void guardarPiezasBD(TableroAjedrez tablero) {
+                        try {
+                        PiezaDAO DAO = new PiezaDAO();
+                        for (int fila = 0; fila < 8; fila++) {
+                                for (int columna = 0; columna < 8; columna++) {
+
+                                        Pieza pieza = tablero
+                                                        .getCasilla(fila, columna)
+                                                        .getPiezaOcupante();
+
+                                        if (pieza != null) {
+                                                DAO.insertarPieza(pieza);
+                                                System.out.println("Insertando: " + pieza.getTipo() + " de color " + pieza.getColor());
+                                        }
+                                }
+                        }
+                } catch (Exception e) {
+                        e.printStackTrace();
+                }
+        }
+
+        private static void listarPiezasBD() {
+                try {
+                        PiezaDAO DAO = new PiezaDAO();
+                        DAO.listarPiezas();
+                } catch (Exception e) {
+                        e.printStackTrace();
                 }
         }
 }
