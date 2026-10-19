@@ -10,7 +10,7 @@ public class AccesoDB {
     private final String maquina = "localhost";
     private String usuario = "Oleos";
     private String clave = "Leona@rdo_8844";
-    private final int puerto = 3306;
+    private final double puerto = 3306;
     private final String bd = "bdajedrezmia";
     private String servidor = "";
     private Connection conexion = null;
