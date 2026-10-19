@@ -40,7 +40,7 @@ public class Main {
 
                                         if (pieza != null) {
                                                 DAO.insertarPieza(pieza);
-                                                System.out.println("Insertando: " + pieza.getTipo());
+                                                System.out.println("Insertando: " + pieza.getTipo() + " de color " + pieza.getColor());
                                         }
                                 }
                         }

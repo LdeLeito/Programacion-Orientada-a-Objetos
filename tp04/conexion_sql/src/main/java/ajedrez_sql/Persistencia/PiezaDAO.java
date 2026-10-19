@@ -36,7 +36,7 @@ public class PiezaDAO {
             case "Torre" -> 3;
             case "Alfil" -> 4;
             case "Caballo" -> 5;
-            case "Peon" -> 6;
+            case "Peón" -> 6;
             default -> throw new IllegalArgumentException("Tipo desconocido: " + pieza.getTipo());
         };
     }

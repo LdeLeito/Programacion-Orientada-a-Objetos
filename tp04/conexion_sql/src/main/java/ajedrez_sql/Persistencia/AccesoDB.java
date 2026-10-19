@@ -7,44 +7,32 @@ import java.sql.SQLException;
 
 public class AccesoDB {
 
-    private final String maquina = "localhost";
-    private String usuario = "Oleos";
-    private String clave = "Leona@rdo_8844";
-    private final double puerto = 3306;
-    private final String bd = "bdajedrezmia";
-    private String servidor = "";
-    private Connection conexion = null;
+    private static final String MAQUINA = "localhost";
+    private static final String USUARIO = "Oleos";
+    private static final String CLAVE = "Leona@rdo_8844";
+    private static final int PUERTO = 3306;
+    private static final String BD = "bdajedrezmia";
 
-    public AccesoDB() {
 
-        this.servidor = "jdbc:mysql://" + this.maquina + ":" + this.puerto + "/" + this.bd;
-
+    // bloque estatico para cargar el driver de MySQL de una sola vez cuando se cargue la clase AccesoDB
+    static {
         try {
-            // Carga el driver mysql en memoria
             Class.forName("com.mysql.cj.jdbc.Driver");
         } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-            System.out.println(e.getMessage());
-            System.err.println("ERROR AL REGISTRAR EL DRIVER");
-
-            System.exit(0); // parar la ejecución
+            throw new RuntimeException(
+                    "No se pudo cargar el driver MySQL",
+                    e
+            );
         }
+    }
 
-        try {
-            // Establecer conexión con el servidor y almarcerla en el atributo conexion
-            conexion = DriverManager.getConnection(this.servidor, this.usuario, this.clave);
-        } catch (SQLException e) {
-            e.printStackTrace();
-            System.out.println(e.getMessage());
-            System.err.println("ERROR AL CONECTAR A LA BASE DE DATOS");
-
-            throw new RuntimeException("Error al conectar a la base de datos", e);
-        }
+    public AccesoDB() {
     }
 
     // Retorna el objeto Conecction que usara
-    public Connection getConexion() {
-        return conexion;
-    }
+    public Connection getConexion() throws SQLException {
 
+        return DriverManager.getConnection(
+                "jdbc:mysql://" + MAQUINA + ":" + PUERTO + "/" + BD, USUARIO, CLAVE);
+    }
 }
